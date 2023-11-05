@@ -1,18 +1,17 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
 
-import {Script} from 'forge-std/Script.sol';
+import {Script} from "forge-std/Script.sol";
 
-import {Greeter} from "src/Greeter.sol";
+import {ERC6909WrapperFactory} from "src/ERC6909WrapperFactory.sol";
 
-/// @notice A very simple deployment script
 contract Deploy is Script {
+    ERC6909WrapperFactory public factory;
 
-  /// @notice The main script entrypoint
-  /// @return greeter The deployed contract
-  function run() external returns (Greeter greeter) {
-    vm.startBroadcast();
-    greeter = new Greeter("GM");
-    vm.stopBroadcast();
-  }
+    function run() external returns (Greeter greeter) {
+        uint256 deployerKey = vm.envUint("deployerKey");
+        vm.startBroadcast(deployerKey);
+        factory = new ERC6909WrapperFactory();
+        vm.stopBroadcast();
+    }
 }

@@ -4,6 +4,6 @@
 [submodule "lib/solmate"]
 	path = lib/solmate
 	url = https://github.com/transmissions11/solmate
-[submodule "lib/ERC-6909"]
-	path = lib/ERC-6909
-	url = https://github.com/jtriley-eth/ERC-6909
+[submodule "lib/erc-6909"]
+	path = lib/erc-6909
+	url = https://github.com/mergd/erc-6909
