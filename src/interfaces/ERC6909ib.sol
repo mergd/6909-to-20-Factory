@@ -41,7 +41,7 @@ abstract contract ERC6909ib is ERC6909 {
     ERC20 public immutable asset;
 
     /// @notice The asset of the token.
-    uint256 public immutable decimals;
+    uint8 public immutable decimals;
 
     constructor(string memory _name, string memory _symbol, ERC20 _asset) {
         name = _name;

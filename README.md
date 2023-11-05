@@ -1,8 +1,12 @@
 <img align="right" width="150" height="150" top="100" src="./public/readme.jpg">
 
-# femplate • [![tests](https://github.com/refcell/femplate/actions/workflows/ci.yml/badge.svg?label=tests)](https://github.com/refcell/femplate/actions/workflows/ci.yml) ![license](https://img.shields.io/github/license/refcell/femplate?label=license) ![solidity](https://img.shields.io/badge/solidity-^0.8.17-lightgrey)
+# wrapper factory • [![tests](https://github.com/refcell/femplate/actions/workflows/ci.yml/badge.svg?label=tests)](https://github.com/refcell/femplate/actions/workflows/ci.yml) ![license](https://img.shields.io/github/license/refcell/femplate?label=license) ![solidity](https://img.shields.io/badge/solidity-^0.8.17-lightgrey)
 
-A **Clean**, **Robust** Template for Foundry Projects.
+Factory which creates erc20 or 4626 wrappers for a 6909 multitoken.
+
+For ERC20, support of ERC6909Metadata is required, but for ERC4626, ERC6909ib should be supported.
+
+ERC6909ib is a simple fork of Solmate's ERC4626 but with an additional id field for each tokenId.
 
 ### Usage
 
@@ -16,15 +20,13 @@ Inside the [`utils/`](./utils/) directory are a few preconfigured scripts that c
 
 Scripts take inputs from the cli, using silent mode to hide any sensitive information.
 
-_NOTE: These scripts are required to be _executable_ meaning they must be made executable by running `chmod +x ./utils/*`._
+_NOTE: These scripts are required to be \_executable_ meaning they must be made executable by running `chmod +x ./utils/*`.\_
 
 _NOTE: these scripts will prompt you for the contract name and deployed addresses (when verifying). Also, they use the `-i` flag on `forge` to ask for your private key for deployment. This uses silent mode which keeps your private key from being printed to the console (and visible in logs)._
-
 
 ### I'm new, how do I get started?
 
 We created a guide to get you started with: [GETTING_STARTED.md](./GETTING_STARTED.md).
-
 
 ### Blueprint
 
@@ -40,7 +42,6 @@ test
 └─ Greeter.t — Example Contract Tests
 ```
 
-
 ### Notable Mentions
 
 - [femplate](https://github.com/refcell/femplate)
@@ -49,7 +50,6 @@ test
 - [forge-std](https://github.com/brockelmore/forge-std)
 - [forge-template](https://github.com/foundry-rs/forge-template)
 - [foundry-toolchain](https://github.com/foundry-rs/foundry-toolchain)
-
 
 ### Disclaimer
 

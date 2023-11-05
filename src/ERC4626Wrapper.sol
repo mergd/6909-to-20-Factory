@@ -17,12 +17,17 @@ contract ERC4626Wrapper is ERC4626 {
     // Underlying 6909 should implement previewDeposits, previewWithdrawals, and totalAssets, with tokenId as an extra field
     // Wrapper
 
-    constructor(uint256 _id, uint8 _decimals, string memory _name, string memory _symbol, address _token)
-        ERC20(_name, _symbol, _decimals)
-    {
+    constructor(
+        uint256 _id,
+        uint8 _decimals,
+        address _asset,
+        string memory _name,
+        string memory _symbol,
+        address _token
+    ) ERC20(_name, _symbol, _decimals) {
         id = _id;
         token = ERC6909ib(_token);
-        asset = token.asset();
+        asset = ERC20(_asset);
         asset.approve(_token, type(uint256).max);
     }
 
