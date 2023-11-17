@@ -36,9 +36,9 @@ contract ERC6909WrapperFactory {
     function createERC4626Wrapper(uint256 id, address token) external returns (ERC4626Wrapper wrapper) {
         if (erc20Wrapper[token][id] != address(0)) return ERC4626Wrapper(erc20Wrapper[token][id]);
 
-        uint8 decimals = ERC6909ib(token).decimals();
+        uint8 decimals = ERC6909ib(token).decimals(id);
         if (decimals == 0) revert("WRONG_DECIMALS"); // Token might not support 6909ib
-        address asset = address(ERC6909ib(token).asset());
+        address asset = address(ERC6909ib(token).asset(id));
         if (asset == address(0)) revert("NO_ASSET");
         string memory name = ERC6909ib(token).name();
         string memory symbol = ERC6909ib(token).symbol();
